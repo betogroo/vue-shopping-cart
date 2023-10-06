@@ -23,5 +23,14 @@ const { xs } = useDisplay()
         >Vue Shopping Cart</RouterLink
       >
     </template>
+    <template #append>
+      <v-badge
+        color="transparent"
+        :content="4"
+        location="top start"
+      >
+        <v-icon icon="mdi-cart-outline"></v-icon>
+      </v-badge>
+    </template>
   </v-app-bar>
 </template>
