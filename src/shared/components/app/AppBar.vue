@@ -10,18 +10,5 @@
         >Vue Shopping Cart</RouterLink
       >
     </v-app-bar-title>
-    <div class="ma-3">
-      <RouterLink
-        class="text-white text-decoration-none"
-        :to="{ name: 'HomeView' }"
-        >Home</RouterLink
-      >
-      |
-      <RouterLink
-        class="text-white text-decoration-none"
-        :to="{ name: 'AboutView' }"
-        >About</RouterLink
-      >
-    </div>
   </v-app-bar>
 </template>
