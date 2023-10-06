@@ -7,7 +7,7 @@
       <RouterLink
         class="text-white text-decoration-none"
         :to="{ name: 'HomeView' }"
-        >Vue Scaffold</RouterLink
+        >Vue Shopping Cart</RouterLink
       >
     </v-app-bar-title>
     <div class="ma-3">
