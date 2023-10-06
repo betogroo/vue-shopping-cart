@@ -25,9 +25,10 @@ const { xs } = useDisplay()
     </template>
     <template #append>
       <v-badge
-        color="transparent"
+        class="ma-2"
+        color="red"
         :content="4"
-        location="top start"
+        location="right top"
       >
         <v-icon icon="mdi-cart-outline"></v-icon>
       </v-badge>
