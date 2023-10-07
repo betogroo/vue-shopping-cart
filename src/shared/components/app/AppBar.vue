@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { SearchTextField } from '@/modules/main/components'
 import { useDisplay } from 'vuetify/lib/framework.mjs'
-const { xs } = useDisplay()
+const { xs, md } = useDisplay()
 </script>
 <template>
   <v-app-bar
@@ -27,16 +28,9 @@ const { xs } = useDisplay()
     <template #default>
       <v-sheet
         color="transparent"
-        :width="xs ? 350 : 650"
+        :width="md ? 350 : 650"
       >
-        <v-text-field
-          append-inner-icon="mdi-magnify"
-          class="mx-4"
-          density="compact"
-          hide-details
-          placeholder="Procure seu produto"
-          variant="solo"
-        />
+        <SearchTextField />
       </v-sheet>
     </template>
     <template #append>
