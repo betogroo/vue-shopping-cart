@@ -23,6 +23,22 @@ const { xs } = useDisplay()
         >Vue Shopping Cart</RouterLink
       >
     </template>
+
+    <template #default>
+      <v-sheet
+        color="transparent"
+        :width="xs ? 350 : 650"
+      >
+        <v-text-field
+          append-inner-icon="mdi-magnify"
+          class="mx-4"
+          density="compact"
+          hide-details
+          placeholder="Procure seu produto"
+          variant="solo"
+        />
+      </v-sheet>
+    </template>
     <template #append>
       <v-badge
         class="ma-2"
