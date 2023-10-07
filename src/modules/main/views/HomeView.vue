@@ -1,11 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ProductList } from '../components'
+</script>
 <template>
-  <v-container class="d-flex justify-center fill-height">
-    <v-responsive
-      class="text-center"
-      max-width="250"
-    >
-      <h1>Shopping Cart</h1>
+  <v-container class="d-flex justify-center">
+    <v-responsive class="justify-center">
+      <ProductList />
     </v-responsive>
   </v-container>
 </template>
