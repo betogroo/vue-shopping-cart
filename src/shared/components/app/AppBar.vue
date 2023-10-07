@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SearchTextField } from '@/modules/main/components'
+import { SearchTextField, CartIcon } from '@/modules/main/components'
 import { useDisplay } from 'vuetify/lib/framework.mjs'
 const { xs, md } = useDisplay()
 </script>
@@ -34,18 +34,7 @@ const { xs, md } = useDisplay()
       </v-sheet>
     </template>
     <template #append>
-      <v-badge
-        class="ma-2"
-        color="red"
-        :content="4"
-        location="right top"
-      >
-        <v-btn
-          density="compact"
-          icon="mdi-cart-variant"
-          variant="text"
-        />
-      </v-badge>
+      <CartIcon />
     </template>
   </v-app-bar>
 </template>

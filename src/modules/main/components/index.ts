@@ -1,3 +1,4 @@
 import SearchTextField from './SearchTextField.vue'
+import CartIcon from './CartIcon.vue'
 
-export { SearchTextField }
+export { SearchTextField, CartIcon }
