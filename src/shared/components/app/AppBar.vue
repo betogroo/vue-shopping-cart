@@ -30,7 +30,11 @@ const { xs } = useDisplay()
         :content="4"
         location="right top"
       >
-        <v-icon icon="mdi-cart-outline"></v-icon>
+        <v-btn
+          density="compact"
+          icon="mdi-cart-variant"
+          variant="text"
+        />
       </v-badge>
     </template>
   </v-app-bar>
