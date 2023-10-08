@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import ProductContainer from './ProductContainer.vue'
-import { useProduct } from '../composables'
-const { products } = useProduct()
+interface Props {
+  products: any[]
+}
+const props = defineProps<Props>()
 </script>
 
 <template>
