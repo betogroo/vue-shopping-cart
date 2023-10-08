@@ -15,6 +15,6 @@ const { product } = toRefs(props)
     variant="outlined"
     width="125"
   >
-    <v-card-title>{{ product.name }}</v-card-title>
+    <v-card-title>{{ product.title }}</v-card-title>
   </v-card>
 </template>
