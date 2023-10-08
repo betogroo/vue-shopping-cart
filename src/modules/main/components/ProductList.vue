@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import ProductContainer from './ProductContainer.vue'
+import type { Product } from '../types/Product'
 interface Props {
-  products: any[]
+  products: Product[]
 }
 const props = defineProps<Props>()
 </script>
