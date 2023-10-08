@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { watchEffect } from 'vue'
 import { ProductList } from '../components'
 import { useProduct } from '../composables'
 const { products, fetchProducts } = useProduct()
-await fetchProducts()
+watchEffect(async () => {
+  await fetchProducts()
+})
 </script>
 <template>
   <v-container class="d-flex justify-center">
