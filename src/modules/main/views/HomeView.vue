@@ -8,7 +8,7 @@ interface Props {
   search: string
 }
 watchEffect(async () => {
-  await fetchProducts()
+  await fetchProducts(props.search)
 })
 </script>
 <template>
