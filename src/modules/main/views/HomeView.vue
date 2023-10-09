@@ -14,7 +14,10 @@ watchEffect(async () => {
 <template>
   <v-container class="d-flex justify-center bg-blue-grey-lighten-5 pa-1 pt-6">
     <v-responsive class="justify-center ma-0">
-      {{ search }}
+      <span class="text-h6"
+        >Resultados para: <br />
+        {{ search }}</span
+      >
       <ProductList :products="products" />
     </v-responsive>
   </v-container>

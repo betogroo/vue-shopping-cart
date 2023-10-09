@@ -9,7 +9,9 @@ const useProduct = () => {
 
   const fetchProducts = async (term: string) => {
     try {
-      const url = `https://api.mercadolibre.com/sites/MLB/search?q=${term}&limit=10`
+      const url = `https://api.mercadolibre.com/sites/MLB/search?q=${encodeURIComponent(
+        term,
+      )}&limit=10`
       if (url === undefined)
         throw new Error('Erro ao carregar as imagens (Url indefinida)')
       error.value = null
