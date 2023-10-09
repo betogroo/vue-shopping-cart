@@ -3,9 +3,12 @@ import { CustomRouteRecordRaw } from 'vue-router'
 
 const routes: CustomRouteRecordRaw[] = [
   {
-    path: '/',
+    path: '/:search?',
     component: () => import('../views/HomeView.vue'),
     name: 'HomeView',
+    props: (route) => ({
+      search: route.params.search || 'all',
+    }),
     meta: {
       title: 'Home',
       requiresAuth: false,

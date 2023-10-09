@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 const searchTerm = ref('')
 const handleSubmit = () => {
-  console.log(searchTerm.value)
+  router.push({ name: 'HomeView', params: { search: searchTerm.value } })
+  searchTerm.value = ''
 }
 </script>
 

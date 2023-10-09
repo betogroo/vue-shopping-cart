@@ -1,15 +1,17 @@
 import { ref } from 'vue'
 import { Product, ProductSchema, ProductList } from '../types/Product'
 
-const url = 'https://api.mercadolibre.com/sites/MLB/search?q=all&limit=10'
 const error = ref<string | null>(null)
 const isPending = ref<string | boolean>(false)
 
 const useProduct = () => {
   const products = ref<Product[]>([])
 
-  const fetchProducts = async (limit = 10) => {
+  const fetchProducts = async (term: string) => {
     try {
+      const url = `https://api.mercadolibre.com/sites/MLB/search?q=${encodeURIComponent(
+        term,
+      )}&limit=10`
       if (url === undefined)
         throw new Error('Erro ao carregar as imagens (Url indefinida)')
       error.value = null
