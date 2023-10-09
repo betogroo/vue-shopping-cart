@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { watchEffect } from 'vue'
-import { ProductList, CartComponent } from '../components'
+import { ProductList, CartDrawer } from '../components'
 import { useProduct } from '../composables'
 import { AppOverlayLoading } from '@/shared/components'
 const props = defineProps<Props>()
