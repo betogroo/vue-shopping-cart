@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { watchEffect } from 'vue'
-import { ProductList } from '../components'
+import { ProductList, CartComponent } from '../components'
 import { useProduct } from '../composables'
 import { AppOverlayLoading } from '@/shared/components'
 const props = defineProps<Props>()
@@ -11,7 +11,6 @@ interface Props {
 watchEffect(async () => {
   await fetchProducts(props.search)
 })
-const overlay = true
 </script>
 <template>
   <v-container class="d-flex justify-center pa-1 pt-6">
