@@ -8,7 +8,7 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <div class="d-flex flex-wrap justify-center">
+  <div class="d-flex flex-wrap justify-space-around">
     <ProductContainer
       v-for="product in products"
       :key="product.id"
