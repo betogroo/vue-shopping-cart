@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useCartStore } from '../store/useCartStore'
+const store = useCartStore()
 
-const showCart = ref(false)
 const handleClick = () => {
-  showCart.value = !showCart.value
-  console.log(showCart.value)
+  store.toggleVisible()
 }
 </script>
 

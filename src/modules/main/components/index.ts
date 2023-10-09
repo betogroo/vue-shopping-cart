@@ -1,5 +1,6 @@
 import SearchTextField from './SearchTextField.vue'
 import CartIcon from './CartIcon.vue'
 import ProductList from './ProductList.vue'
+import CartDrawer from './CartDrawer.vue'
 
-export { SearchTextField, CartIcon, ProductList }
+export { ProductList, SearchTextField, CartIcon, CartDrawer }
