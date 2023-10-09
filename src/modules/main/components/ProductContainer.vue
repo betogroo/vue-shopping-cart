@@ -20,7 +20,7 @@ const handleClick = () => {
       :class="{ 'on-hover': isHovering }"
       :elevation="isHovering ? 10 : 2"
       height="380"
-      max-width="200"
+      max-width="190"
       variant="elevated"
       width="100%"
       v-bind="props"

@@ -8,8 +8,8 @@ watchEffect(async () => {
 })
 </script>
 <template>
-  <v-container class="d-flex justify-center bg-blue-grey-lighten-5">
-    <v-responsive class="justify-center">
+  <v-container class="d-flex justify-center bg-blue-grey-lighten-5 pa-1 pt-6">
+    <v-responsive class="justify-center ma-0">
       <ProductList :products="products" />
     </v-responsive>
   </v-container>
