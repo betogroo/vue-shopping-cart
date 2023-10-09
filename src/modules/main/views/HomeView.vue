@@ -2,14 +2,16 @@
 import { watchEffect } from 'vue'
 import { ProductList } from '../components'
 import { useProduct } from '../composables'
+import { AppOverlayLoading } from '@/shared/components'
 const props = defineProps<Props>()
-const { products, fetchProducts } = useProduct()
+const { products, fetchProducts, isPending } = useProduct()
 interface Props {
   search: string
 }
 watchEffect(async () => {
   await fetchProducts(props.search)
 })
+const overlay = true
 </script>
 <template>
   <v-container class="d-flex justify-center pa-1 pt-6">
@@ -18,7 +20,11 @@ watchEffect(async () => {
         >Resultados para: <br />
         {{ search }}</span
       >
-      <ProductList :products="products" />
+      <ProductList
+        :is-pending="isPending"
+        :products="products"
+      />
+      <AppOverlayLoading :active="isPending" />
     </v-responsive>
   </v-container>
 </template>
