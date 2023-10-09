@@ -4,7 +4,7 @@ import { AppBar } from '@/shared/components'
 <template>
   <v-app>
     <AppBar />
-    <v-main>
+    <v-main class="bg-blue-grey-lighten-5">
       <Suspense>
         <RouterView />
         <template #fallback>Loading</template>
