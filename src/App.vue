@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AppBar } from '@/shared/components'
+import { AppBar, AppFooter } from '@/shared/components'
 </script>
 <template>
   <v-app>
@@ -9,6 +9,7 @@ import { AppBar } from '@/shared/components'
         <RouterView />
         <template #fallback>Loading</template>
       </Suspense>
+      <AppFooter />
     </v-main>
   </v-app>
 </template>
