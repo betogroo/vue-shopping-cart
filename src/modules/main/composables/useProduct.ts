@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { Product, ProductSchema, ProductList } from '../types/Product'
+import { Product, ProductList } from '../types/Product'
 
 const error = ref<string | null>(null)
 const isPending = ref<string | boolean>(false)
@@ -31,7 +31,7 @@ const useProduct = () => {
     }
   }
 
-  return { products, fetchProducts }
+  return { products, fetchProducts, isPending }
 }
 
 export default useProduct
