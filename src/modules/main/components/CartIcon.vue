@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useCartStore } from '../store/useCartStore'
 const store = useCartStore()
+const { itemsCount } = store
 
 const handleClick = () => {
   store.toggleVisible()
@@ -11,7 +12,7 @@ const handleClick = () => {
   <v-badge
     class="ma-2"
     color="red"
-    :content="4"
+    :content="itemsCount"
     location="right top"
   >
     <v-btn
