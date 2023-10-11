@@ -7,10 +7,14 @@ export const useCartStore = defineStore('cart', () => {
   // state
   const visible = ref(false)
   const cartItems = ref<Product[]>([])
+  const pin = ref(false)
 
   // actions
   const toggleVisible = () => {
     visible.value = !visible.value
+  }
+  const togglePin = () => {
+    pin.value = !pin.value
   }
 
   const deleteItem = (index: number) => {
@@ -30,7 +34,9 @@ export const useCartStore = defineStore('cart', () => {
   return {
     visible,
     cartItems,
+    pin,
     toggleVisible,
+    togglePin,
     deleteItem,
     itemsCount,
     cartAmount,
