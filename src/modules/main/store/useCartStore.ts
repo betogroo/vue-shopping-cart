@@ -13,8 +13,12 @@ export const useCartStore = defineStore('cart', () => {
     visible.value = !visible.value
   }
 
+  const deleteItem = (index: number) => {
+    cartItems.value.splice(index, 1)
+  }
+
   //getters
   const itemsCount = computed(() => cartItems.value.length)
 
-  return { visible, cartItems, toggleVisible, itemsCount }
+  return { visible, cartItems, toggleVisible, deleteItem, itemsCount }
 })

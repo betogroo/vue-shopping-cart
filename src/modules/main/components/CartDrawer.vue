@@ -7,10 +7,11 @@ import { useHelpers } from '@/shared/composables'
 const { mobile } = useDisplay()
 const store = useCartStore()
 const { visible, cartItems } = storeToRefs(store)
+const { deleteItem } = store
 const { localCurrency } = useHelpers()
 
 const handleDelete = (index: number) => {
-  console.log('Vai deletar', index)
+  deleteItem(index)
 }
 </script>
 
