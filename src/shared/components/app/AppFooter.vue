@@ -1,5 +1,8 @@
 <template>
-  <v-footer app>
+  <v-footer
+    app
+    :order="-1"
+  >
     <v-row
       justify="center"
       no-gutters
