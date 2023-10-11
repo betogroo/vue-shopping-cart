@@ -1,28 +1,21 @@
 <template>
-  <v-footer
-    app
+  <v-bottom-navigation
+    density="compact"
+    :elevation="0"
+    grow
+    mode="shift"
     :order="-1"
   >
-    <v-row
-      justify="center"
-      no-gutters
-    >
-      <v-btn
-        :ripple="false"
-        :to="{ name: 'HomeView' }"
-        variant="plain"
-        >Home</v-btn
-      >
-      <v-btn
-        :to="{ name: 'AboutView' }"
-        variant="text"
-        >About Us</v-btn
-      >
-      <v-col
-        class="text-center mt-3"
-        cols="12"
-        >2023 - Vue Shopping Cart</v-col
-      >
-    </v-row>
-  </v-footer>
+    <v-btn :to="{ name: 'HomeView' }">
+      <v-icon>mdi-home</v-icon>
+
+      <span>Home</span>
+    </v-btn>
+
+    <v-btn :to="{ name: 'AboutView' }">
+      <v-icon>mdi-information</v-icon>
+
+      <span>About Us</span>
+    </v-btn>
+  </v-bottom-navigation>
 </template>
