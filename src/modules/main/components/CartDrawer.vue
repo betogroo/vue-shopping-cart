@@ -22,6 +22,7 @@ const handleDelete = (index: number) => {
     :location="mobile ? 'bottom' : 'right'"
     :permanent="pin"
     temporary
+    width="384"
   >
     <template #prepend>
       <div class="d-flex align-center">
