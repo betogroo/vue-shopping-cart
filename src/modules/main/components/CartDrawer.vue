@@ -6,7 +6,7 @@ import { useHelpers } from '@/shared/composables'
 
 const { mobile } = useDisplay()
 const store = useCartStore()
-const { visible, cartItems, cartAmount } = storeToRefs(store)
+const { visible, cartItems, cartAmount, itemsCount } = storeToRefs(store)
 const { deleteItem } = store
 const { localCurrency } = useHelpers()
 
@@ -53,14 +53,17 @@ const handleDelete = (index: number) => {
         </template>
       </v-list-item>
     </v-list>
-    <div class="text-body-1 ml-3">
-      Total no carrinho: {{ localCurrency(cartAmount) }}
-    </div>
-    <v-btn
-      block
-      color="success"
-      prepend-icon="mdi-check"
-      >Fechar pedido</v-btn
-    >
+    <template #append>
+      <div class="text-body-1 ml-3">Items: {{ itemsCount }}</div>
+      <div class="text-body-1 ml-3">
+        Total no carrinho: {{ localCurrency(cartAmount) }}
+      </div>
+      <v-btn
+        block
+        color="success"
+        prepend-icon="mdi-check"
+        >Fechar pedido {{ localCurrency(cartAmount) }}</v-btn
+      >
+    </template>
   </v-navigation-drawer>
 </template>
