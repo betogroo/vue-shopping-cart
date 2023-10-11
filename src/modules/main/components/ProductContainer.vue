@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { toRefs } from 'vue'
 import type { Product } from '../types/Product'
+import { useCartStore } from '../store/useCartStore'
 import { useHelpers } from '@/shared/composables'
 import { useDisplay } from 'vuetify/lib/framework.mjs'
 const props = defineProps<Props>()
 const { localCurrency } = useHelpers()
 const { mobile } = useDisplay()
+const store = useCartStore()
 interface Props {
   product: Product
 }
 const { product } = toRefs(props)
 const handleClick = () => {
-  console.log(product.value.id)
+  store.cartItems.push(product.value)
 }
 </script>
 
