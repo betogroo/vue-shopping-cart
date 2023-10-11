@@ -6,7 +6,7 @@ import { useHelpers } from '@/shared/composables'
 
 const { mobile } = useDisplay()
 const store = useCartStore()
-const { visible, cartItems } = storeToRefs(store)
+const { visible, cartItems, cartAmount } = storeToRefs(store)
 const { deleteItem } = store
 const { localCurrency } = useHelpers()
 
@@ -18,9 +18,14 @@ const handleDelete = (index: number) => {
 <template>
   <v-navigation-drawer
     v-model="visible"
+    class="pt-4 px-1 pb-10"
     :location="mobile ? 'bottom' : 'right'"
     temporary
   >
+    <template #prepend>
+      <h1 class="text-h6">Carrinho de Compras</h1>
+    </template>
+
     <v-list lines="two">
       <v-list-item
         v-for="(item, i) in cartItems"
@@ -31,20 +36,31 @@ const handleDelete = (index: number) => {
             mdi-trash-can-outline</v-icon
           ></template
         >
-        <template #title>{{ item.title }}</template>
+        <template #title
+          ><small>{{ item.title }}</small></template
+        >
         <template #subtitle>
-          <h1 class="font-weight-bold text-right">
+          <div class="font-weight-bold text-right text-subtitle-2">
             {{ localCurrency(item.price) }}
-          </h1></template
+          </div></template
         >
         <template #prepend>
           <v-avatar
             :image="item.thumbnail"
-            size="40"
+            size="32"
             variant="elevated"
           ></v-avatar>
         </template>
       </v-list-item>
     </v-list>
+    <div class="text-body-1 ml-3">
+      Total no carrinho: {{ localCurrency(cartAmount) }}
+    </div>
+    <v-btn
+      block
+      color="success"
+      prepend-icon="mdi-check"
+      >Fechar pedido</v-btn
+    >
   </v-navigation-drawer>
 </template>
